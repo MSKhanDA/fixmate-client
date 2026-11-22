@@ -5,7 +5,7 @@
 FixMate connects customers with verified repair technicians for smartphones, laptops, ACs, refrigerators, TVs, washing machines and electrical work. Every job has a clear, trackable status (Requested → Accepted → In Progress → Completed), and customers pay online **only after the work is done**.
 
 - **Live site:** https://YOUR-CLIENT.vercel.app
-- **API repository:** https://github.com/YOUR-USERNAME/fixmate-server
+- **API repository:** https://github.com/MSKhanDA/fixmate-server
 
 ## Test accounts
 
