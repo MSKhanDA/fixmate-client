@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0f1f1c;
+  --color-muted: #5b6b66;
+  --color-cream: #f6f4ee;
+  --color-sand: #ede9de;
+  --color-line: #e3dfd3;
+
+  --color-pine-50: #ecf5f1;
+  --color-pine-100: #d3e8df;
+  --color-pine-200: #a7d1bf;
+  --color-pine-300: #6fb39a;
+  --color-pine-500: #1f7a63;
+  --color-pine-600: #17634f;
+  --color-pine-700: #124f40;
+  --color-pine-800: #0e3d32;
+  --color-pine-900: #0b2e26;
+
+  --color-lime-200: #e6f9b5;
+  --color-lime-300: #d5f48a;
+  --color-lime-400: #c3ea5f;
+  --color-lime-500: #a9d23f;
+
+  --radius-card: 1.25rem;
+  --shadow-card: 0 1px 2px rgb(15 31 28 / 0.04), 0 8px 24px -12px rgb(15 31 28 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(15 31 28 / 0.05), 0 18px 40px -16px rgb(15 31 28 / 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+  ::selection {
+    @apply bg-lime-300 text-ink;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-pine-500;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* One button style everywhere */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition duration-200 select-none disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-sm {
+    @apply px-3.5 py-1.5 text-xs;
+  }
+  .btn-lg {
+    @apply px-7 py-3.5 text-base;
+  }
+  .btn-primary {
+    @apply bg-pine-700 text-white shadow-sm hover:bg-pine-800 active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply bg-lime-400 text-ink shadow-sm hover:bg-lime-300 active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply border border-line bg-white text-ink hover:border-pine-300 hover:bg-pine-50;
+  }
+  .btn-ghost {
+    @apply text-ink hover:bg-sand;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 active:scale-[0.98];
+  }
+
+  .card {
+    @apply rounded-[var(--radius-card)] border border-line bg-white shadow-[var(--shadow-card)];
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-pine-50 px-3 py-1 text-xs font-bold tracking-widest text-pine-700 uppercase;
+  }
+  .section-title {
+    @apply font-display text-3xl font-bold text-ink sm:text-4xl;
+  }
+  .section-lead {
+    @apply mt-3 max-w-2xl text-base leading-relaxed text-muted sm:text-lg;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+  .input {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-sm text-ink placeholder:text-muted/70 transition outline-none focus:border-pine-500 focus:ring-4 focus:ring-pine-100 disabled:cursor-not-allowed disabled:bg-sand/60 disabled:text-muted;
+  }
+  .input-error {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-100;
+  }
+  .field-error {
+    @apply mt-1.5 text-xs font-medium text-red-600;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-sand;
+  }
+
+  /* Grid-paper texture used behind hero and CTA blocks */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(15 31 28 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(15 31 28 / 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-grid-light {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
