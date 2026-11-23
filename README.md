@@ -4,7 +4,7 @@
 
 FixMate connects customers with verified repair technicians for smartphones, laptops, ACs, refrigerators, TVs, washing machines and electrical work. Every job has a clear, trackable status (Requested → Accepted → In Progress → Completed), and customers pay online **only after the work is done**.
 
-- **Live site:** https://YOUR-CLIENT.vercel.app
+- **Live site:** https://fixmate-client-rho-coral.vercel.app
 - **API repository:** https://github.com/MSKhanDA/fixmate-server
 
 ## Test accounts
@@ -72,4 +72,4 @@ Environment variables (`.env.local`):
 
 1. Import the repository in Vercel and add every variable above (with `BETTER_AUTH_URL` = your production URL).
 2. After the first deploy, put the production URL in the server's `CLIENT_URL` so CORS and Stripe redirects allow it.
-3. Seed the live database from the server repo: `SEED_AUTH_URL=https://YOUR-CLIENT.vercel.app npm run seed`.
+3. Seed the live database from the server repo: `SEED_AUTH_URL=https://fixmate-client-rho-coral.vercel.app npm run seed`.
